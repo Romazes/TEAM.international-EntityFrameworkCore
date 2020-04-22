@@ -8,7 +8,7 @@ namespace Repository.Base
         Task<IEnumerable<TModel>> GetAll();
         Task<TModel> Get(int? id);
         Task<TModel> Add(TModel entity);
-        Task<TModel> Update(int? id, TModel entity);
+        Task<TModel> Update(TModel entity);
         Task<TModel> Delete(int? id);
     }
 }

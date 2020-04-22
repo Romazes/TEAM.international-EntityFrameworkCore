@@ -47,7 +47,7 @@ namespace EntityFramework.Abstract
             return await _context.Set<TModel>().ToListAsync();
         }
 
-        public async Task<TModel> Update(int? id, TModel entity)
+        public async Task<TModel> Update(TModel entity)
         {
             
             _context.Entry(entity).State = EntityState.Modified;

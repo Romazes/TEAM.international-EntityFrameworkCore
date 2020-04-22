@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Supply>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Supply-Date Table</h1>
+<a asp-action="Create" class="btn btn-primary mt-5 mb-5">Add new Supply</a>
+<div>
+    <table class="table table-striped mt-2">
+        <thead>
+            <tr>
+                <th scope="col">Id_Supply</th>
+                <th scope="col">Schedule Date</th>
+                <th scope="col">Close Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Plantation Name</th>
+                <th scope="col">Warehouse Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td scope="row">@item.Id</td>
+                    <td>@item.ScheduledDate</td>
+                    <td>@item.ClosedDate</td>
+                    <td>@item.Status</td>
+                    <td>@item.PlantationId</td>
+                    <td>@item.WarehouseId</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-target="#@Html.DisplayName("modal" + item.Id)">
+                            Remove
+                        </button>
+                        <div id="@Html.DisplayName("modal" + item.Id)" class="modal fade" role="dialog" data-toggle="modal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        @await Html.PartialAsync("_Delete", item)
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

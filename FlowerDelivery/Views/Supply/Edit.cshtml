@@ -1,0 +1,22 @@
+﻿@model Model.Warehouse
+@{
+    ViewData["Title"] = "Edit";
+}
+
+    <h1>Change existing Warehouse</h1>
+<div class="col-md-7 m-auto">
+    <form asp-action="Edit" class="mt-4 mb-4">
+        @Html.HiddenFor(model => model.Id)
+        <div class="form-group mt-4">
+            <h6>Warehouse</h6>
+            <input asp-for="Name" class="form-control" required />
+        </div>
+        <div class="form-group mt-4">
+            <h6>Address</h6>
+            <input asp-for="Address" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">
+            Edit Warehouse
+        </button>
+    </form>
+</div>

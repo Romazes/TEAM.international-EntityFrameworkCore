@@ -1,0 +1,23 @@
+﻿@model Model.Supply
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <h1>Add new Supply</h1>
+    <form asp-action="Create">
+        <div>
+            <label>The Schedule Date</label>
+            <input asp-for="ScheduledDate" type="text" class="form-control" placeholder="" required>
+        </div>
+        <div>
+            <label>The Schedule Date</label>
+            <input asp-for="ClosedDate" type="text" class="form-control" placeholder="" required>
+        </div>
+        <div>
+            <label>Status</label>
+            <input asp-for="Status" type="text" class="form-control" placeholder="Status" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">
+            Add Plantation
+        </button>
+    </form>

@@ -30,7 +30,8 @@ namespace FlowerDelivery
             services.AddScoped<EFCoreFlowerRepository>();
             services.AddScoped<EFCorePlantationRepository>();
             services.AddScoped<EFCoreWarehouseRepository>();
-
+            services.AddScoped<EFCoreSupplyRepository>();
+            
 
             services.AddControllersWithViews();
         }

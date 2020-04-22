@@ -63,26 +63,18 @@ namespace FlowerDelivery.Controllers.EFCoreBaseController
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(int? id, [FromForm]TModel model)
+        public async Task<ActionResult> Edit([FromForm]TModel model)
         {
             try
             {
                 if (model == null)
                     return View();
 
-                if (!ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
-                    return BadRequest("Invald Flower object");
+                    await _repository.Update(model);
+                    return RedirectToAction("Index");
                 }
-
-                var modelEntity = await _repository.Get(id);
-                if(modelEntity == null)
-                {
-                    return NotFound();
-                }
-
-                await _repository.Update(id, model);
-                return RedirectToAction("Index");
             }
             catch (DataException)
             {
