@@ -1,0 +1,18 @@
+﻿@model Model.Flower
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Change existing Flower</h1>
+<div class="col-md-7 m-auto">
+    <form asp-action="Edit" class="mt-4 mb-4">
+        @Html.HiddenFor(model => model.Id)
+        <div class="form-group mt-4">
+            <h6>Name</h6>
+            <input asp-for="Name" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">
+            Edit employee
+        </button>
+    </form>
+</div>

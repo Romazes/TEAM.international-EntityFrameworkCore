@@ -1,0 +1,15 @@
+﻿@model Model.Flower
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add new Flower</h1>
+<form asp-action="Create">
+    <div>
+        <label>The FLower Name</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="Name" required>
+    </div>
+    <button type="submit" class="btn btn-primary mt-5">
+        Add Flower
+    </button>
+</form>
