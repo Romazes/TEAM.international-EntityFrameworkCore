@@ -4,15 +4,13 @@
 }
 
 <h1>Change existing Flower</h1>
-<div class="col-md-7 m-auto">
-    <form asp-action="Edit" method="post" class="mt-4 mb-4">
-        @Html.HiddenFor(f => f.Id)
-        <div class="form-group mt-4">
-            <h6>Name</h6>
-            <input asp-for="Name" class="form-control" required />
-        </div>
-        <button type="submit" class="btn btn-primary mt-5">
-            Change Flower
-        </button>
-    </form>
-</div>
+<form asp-action="Edit" method="post" class="mt-4 mb-4">
+    @Html.Hidden("Id", Model.Id)
+    <div class="form-group mt-4">
+        <h6>Name</h6>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary mt-5">
+        Change Flower
+    </button>
+</form>

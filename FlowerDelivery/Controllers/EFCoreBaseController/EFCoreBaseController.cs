@@ -63,7 +63,7 @@ namespace FlowerDelivery.Controllers.EFCoreBaseController
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit([FromForm]TModel model)
+        public virtual async Task<ActionResult> Edit([FromForm]TModel model)
         {
             try
             {
