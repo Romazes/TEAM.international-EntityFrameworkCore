@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Model
@@ -7,6 +8,8 @@ namespace Model
     {
         [MaxLength(50), Required(ErrorMessage = "The Name is required.")]
         public string Name { get; set; }
+        [StringLength(50)]
+        public string LatinName { get; set; }
 
         public ICollection<PlantationFlower> PlantationFlowers { get; set; }
         public ICollection<WarehouseFlower> WarehouseFlowers { get; set; }
